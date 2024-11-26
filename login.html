@@ -59,11 +59,11 @@
                                     <form class="user" id="loginForm">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
-                                                id="usernameInput" placeholder="Username">
+                                                id="usernameInput" placeholder="Username" value="april@boulderinnovations.com">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="passwordInput" placeholder="Password">
+                                                id="passwordInput" placeholder="Password" value="password">
                                         </div>
                                         <div class="form-error" id="loginError">Username or Password is incorrect</div>
                                         <button type="button" class="btn btn-primary btn-user btn-block" id="loginButton">
@@ -89,7 +89,7 @@
             const password = document.getElementById('passwordInput').value.trim();
             const errorDiv = document.getElementById('loginError');
 
-            if (username === "Surabhi" && password === "12345") {
+            if (username === "april@boulderinnovations.com" && password === "password") {
                 // Save login status in sessionStorage
                 sessionStorage.setItem('login', 'true');
                 errorDiv.style.display = 'none';
