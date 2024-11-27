@@ -1,6 +1,12 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  // On page load, ensure the sidebar is closed by default
+  $(document).ready(function() {
+    $("body").addClass("sidebar-toggled");
+    $(".sidebar").addClass("toggled");
+  });
+
   // Toggle the side navigation
   $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
     $("body").toggleClass("sidebar-toggled");

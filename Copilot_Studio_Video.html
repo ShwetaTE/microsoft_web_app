@@ -39,11 +39,12 @@
         }
 
         /* Adjust button position (up and to the right) */
+        /* Adjust button position (up and to the right) */
         #dynamicButton {
-            margin-top: -8px;
-            /* Moves the button slightly up */
-            margin-right: 30px;
-            /* Moves the button to the right */
+            position: fixed; /* Fix the button's position */
+            top: 90px; /* Adjust the distance from the top */
+            right: 20px; /* Adjust the distance from the right */
+            z-index: 1050; /* Ensure it's above other elements */
         }
 
         /* User info */
@@ -56,13 +57,33 @@
             max-width: 150px;
             margin-right: 20px;
         }
+
+    
+        /* Ensure the parent container uses the full height */
+        .video-container {
+            height: 89vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scrollbars */
+            margin: 0;
+            background-color: #202020;
+        }
+
+        /* Make the video responsive */
+        video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Ensures the video scales appropriately */
+        }
+
     </style>
 </head>
 
-<body id="page-top">
+<body id="page-top" class="sidebar-toggled">
 
     <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
+    <nav class="navbar navbar-expand bg-light bg-gradient topbar static-top shadow">
 
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
@@ -78,17 +99,17 @@
             <li class="nav-item">
                 <a href="/Employee_Welcome_Site.html">
                     <button id="dynamicButton" class="btn btn-primary" style="margin-top: 1px; margin-right: 5px;">
-                        <i class="fa fa-play" aria-hidden="true"></i> 10
+                        <i class="fa fa-play" aria-hidden="true"></i> 11
                     </button>
                 </a>
             </li>
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">April</span>
+                    <img class="img-profile" style="height: 40px; width: 40px;" src="img/April_img.jfif">
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -112,7 +133,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             
@@ -127,10 +148,19 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="process_flow_digram.html">
+            <li class="nav-item" active>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="true" aria-controls="collapseFour">
                     <i class="fas fa-cogs fa-sm fa-fw"></i>
-                    <span>Process Flow Digram</span></a>
+                    <span>System Architecture</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="Workflow_Overview.html">Workflow Overview</a>
+                        <a class="collapse-item" href="process_flow_digram.html">Process Flow</a>
+
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -159,14 +189,14 @@
                     <i class="fas fa-fw fa-pen"></i>
                     <span>Makers</span>
                 </a>
-                <div id="collapseThree" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Click By Click Demos</h6> -->
                         <a class="collapse-item" href="M365_Licence_Assignment.html">M365 Licence Assignment</a>
-                        <a class="collapse-item" href="Copilot_in_Power_Automate_Video.html">Copilote in Power
+                        <a class="collapse-item " href="Copilot_in_Power_Automate_Video.html">Copilote in Power
                             Automate</a>
-                        <a class="collapse-item" href="Copilot_Studio.html">Copilot Studio</a>
-                        <a class="collapse-item active" href="Copilot_Studio_Video.html">Copilot Studio Working</a>
+                        <a class="collapse-item active" href="Copilot_Studio.html">Copilot Studio</a>
+                        <a class="collapse-item" href="Copilot_Studio_Video.html">Copilot Studio Working</a>
                         <a class="collapse-item" href="Employee_Welcome_Site.html">Employee Welcome Site</a>
                         <a class="collapse-item" href="Copilot_Power_Pages_Video.html">Copilot in power Pages</a>
                         <a class="collapse-item" href="Reduce_Cost_Risk​.html">Reduce Cost & Risk</a>
@@ -203,28 +233,14 @@
 
             <!-- Main Content -->
             <div id="content">
-
-
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-
-                    <!-- <div class="row"> -->
-                    <!-- Area Chart -->
-                    <div class="d-flex justify-content-center align-items-center vh-80">
-                        <!-- <div class="card w-75 h-auto shadow border-0 p-5"> -->
-                        <div class="card-body d-flex justify-content-center align-items-center p-0">
-                            <video width="100%" height="100%" controls>
-                                <source src="img/3. Microsoft Power Platform - Demo 1b - Copilot Studio.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <!-- </div> -->
+                    <div class="video-container">
+                        <video autoplay muted controls>
+                            <source src="img/3. Microsoft Power Platform - Demo 1b - Copilot Studio.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
-                    <!-- </div> -->
+                    
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
 
@@ -276,7 +292,7 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-    
+
     <script>
         // Check login status on all pages except login.html
         function checkLoginStatus() {
@@ -295,6 +311,8 @@
             window.location.href = "login.html"; // Redirect to login page
         }
         </script>
+    
+
 </body>
 
 </html>

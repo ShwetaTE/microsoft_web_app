@@ -40,10 +40,10 @@
 
         /* Adjust button position (up and to the right) */
         #dynamicButton {
-            margin-top: -8px;
-            /* Moves the button slightly up */
-            margin-right: 30px;
-            /* Moves the button to the right */
+            position: fixed; /* Fix the button's position */
+            top: 90px; /* Adjust the distance from the top */
+            right: 20px; /* Adjust the distance from the right */
+            z-index: 1050; /* Ensure it's above other elements */
         }
 
         /* User info */
@@ -59,10 +59,10 @@
     </style>
 </head>
 
-<body id="page-top">
+<body id="page-top" class="sidebar-toggled">
 
     <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
+    <nav class="navbar navbar-expand bg-light bg-gradient topbar static-top shadow">
 
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
@@ -76,19 +76,19 @@
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a href="/process_flow_digram.html">
+                <a href="/Workflow_Overview.html">
                     <button id="dynamicButton" class="btn btn-primary" style="margin-top: 1px; margin-right: 5px;">
                         <i class="fa fa-play" aria-hidden="true"></i> 1
                     </button>
                 </a>
             </li>
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">April</span>
+                    <img class="img-profile" style="height: 40px; width: 40px;" src="img/April_img.jfif">
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -110,13 +110,9 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
             
-
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
@@ -127,10 +123,35 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="process_flow_digram.html">
+            <!-- <li class="nav-item" active>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="true" aria-controls="collapseFour">
                     <i class="fas fa-cogs fa-sm fa-fw"></i>
-                    <span>Process Flow Digram</span></a>
+                    <span>System Architecture</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="Workflow_Overview.html">Workflow Overview</a>
+                        <a class="collapse-item" href="process_flow_digram.html">Process Flow</a>
+
+                    </div>
+                </div>
+            </li> -->
+
+
+            <li class="nav-item" active>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="true" aria-controls="collapseFour">
+                    <i class="fas fa-cogs fa-sm fa-fw"></i>
+                    <span>System Architecture</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="Workflow_Overview.html">Workflow Overview</a>
+                        <a class="collapse-item" href="process_flow_digram.html">Process Flow</a>
+
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -204,25 +225,15 @@
             <!-- Main Content -->
             <div id="content">
 
-
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-
-                    <!-- <div class="row"> -->
-                    <!-- Area Chart -->
                     <div class="d-flex justify-content-center align-items-center vh-80">
-                        <!-- <div class="card w-75 h-auto shadow border-0 p-5"> -->
                         <div class="card-body d-flex justify-content-center align-items-center p-0">
-                            <img src="img/L50_index_page.png" style="height:89vh; width: 180vh;" alt="Brand Logo" style="width: 150px; height: 40px;">
-
+                            <img src="img/Boulder_dashboard.png" style="height:89vh; width: 180vh;" alt="Brand Logo" style="width: 150px; height: 40px;">
                         </div>
-                        <!-- </div> -->
                     </div>
-                    <!-- </div> -->
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
 
